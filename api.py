@@ -22,5 +22,5 @@ print(requisicao)
 resposta = requisicao.json()
 print(resposta)
 
-# mensagem = resposta["choices"][0]["message"]["content"]
-# print(mensagem)
+mensagem = resposta["choices"][0]["message"]["content"]
+print(mensagem)
