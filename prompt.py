@@ -52,7 +52,7 @@ modelo = f"Ficha de RPG baseado num {nome_objeto}"\
     "Região: (Tecnotronia/Verdeselva/Utilitron/Automorphia/Artalúdico)"\
 
 MENSAGEM_BASE = f"Estou criando uma ficha de personagem de RPG baseado num  {nome_objeto}."\
-    f"Eu preciso que você crie um nome relacionado e valores de 0-10 dos atributos: {atributos}."\
+    f"Eu preciso que você crie um nome relacionado e valores de 0-10 dos atributos (os pontos de vida vão de 0-100): {atributos}."\
     f"Esse personagem precisa se encaixar em uma das regiões com a qual ele mais se relaciona: {regioes}"\
     f"Além disso, coloque um, apenas um, breve parágrafo que invente uma história para esse personagem." \
     f"Ao final me retorne no seguinte modelo: {modelo}"
