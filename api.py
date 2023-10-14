@@ -2,25 +2,30 @@
 # precisamos criar uma conta nova para poder usar o free tier da open ai (o meu free tier expirou)
 # ainda precisamos detalhar a api da maneira que precisamos para o projeto
 
-from key import API_KEY # essa API_KEY vem de outro arquivo que contem somente a chave
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+
 import requests as req
 import  json
 
-headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
+headers = {"Authorization": f"Bearer {os.environ['OPENAI_TOKEN']}", "Content-Type": "application/json"}
 link = "https://api.openai.com/v1/chat/completions"
-id_modelo = "gpt-3.5-turbo"
+model_id = "gpt-3.5-turbo"
 
-body_mensagem = {
-    "model": id_modelo,
+message_body = {
+    "model": model_id,
     "messages": [{"role": "user", "content": "Escreva o hino oficial do maior time do mundo (palmeiras)"}] 
 }
-body_mensagem = json.dumps(body_mensagem)
+message_body = json.dumps(message_body)
 
-requisicao = req.post(link, headers=headers, data=body_mensagem)
-print(requisicao)
+def ask():
+    request = req.post(link, headers=headers, data=message_body)
+    print(request)
 
-resposta = requisicao.json()
-print(resposta)
+    ans = request.json()
+    print(ans)
 
-mensagem = resposta["choices"][0]["message"]["content"]
-print(mensagem)
+    message = ans["choices"][0]["message"]["content"]
+    return message
