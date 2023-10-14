@@ -19,7 +19,7 @@ def send():
     # Talvez aqui eu receba a string da funcao ask e jogue
     # para o endpoint do personagem
 
-    mensagem = ask()
+    message = ask()
     return redirect("/character")
 
 @app.route("/character", methods = ["GET"])
