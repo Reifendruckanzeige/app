@@ -20,11 +20,12 @@ body_mensagem = {
 }
 body_mensagem = json.dumps(body_mensagem)
 
-requisicao = req.post(link, headers=headers, data=body_mensagem)
-print(requisicao)
+def ask():
+    requisicao = req.post(link, headers=headers, data=body_mensagem)
+    print(requisicao)
 
-resposta = requisicao.json()
-print(resposta)
+    resposta = requisicao.json()
+    print(resposta)
 
-mensagem = resposta["choices"][0]["message"]["content"]
-print(mensagem)
+    mensagem = resposta["choices"][0]["message"]["content"]
+    return mensagem
