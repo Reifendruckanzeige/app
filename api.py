@@ -3,6 +3,7 @@
 # ainda precisamos detalhar a api da maneira que precisamos para o projeto
 
 from dotenv import load_dotenv
+from prompt import BASE_MESSAGE
 load_dotenv()
 
 import os
@@ -16,7 +17,7 @@ model_id = "gpt-3.5-turbo"
 
 message_body = {
     "model": model_id,
-    "messages": [{"role": "user", "content": "Escreva o hino oficial do maior time do mundo (palmeiras)"}] 
+    "messages": [{"role": "user", "content": BASE_MESSAGE}] 
 }
 message_body = json.dumps(message_body)
 
