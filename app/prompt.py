@@ -40,7 +40,6 @@ regions = {
     )
 }
 
-
 attributes = "Força, Destreza, Percepção, Pontos de vida, Classe(Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"
 
 model = f"Ficha de RPG baseado num {object_name}"\
@@ -52,7 +51,7 @@ model = f"Ficha de RPG baseado num {object_name}"\
     "Região: (Tecnotronia/Verdeselva/Utilitron/Automorphia/Artalúdico)"\
 
 BASE_MESSAGE = f"Estou criando uma ficha de personagem de RPG baseado num  {object_name}."\
-    f"Eu preciso que você crie um nome relacionado e valores de 0-10 dos atributos (os pontos de vida vão de 0-100): {atributos}."\
+    f"Eu preciso que você crie um nome relacionado e valores de 0-10 dos atributos (os pontos de vida vão de 0-100): {attributes}."\
     f"Esse personagem precisa se encaixar em uma das regiões com a qual ele mais se relaciona: {regions}"\
     f"Além disso, coloque um, apenas um, breve parágrafo que invente uma história para esse personagem." \
     f"Ao final me retorne no seguinte modelo: {model}"
