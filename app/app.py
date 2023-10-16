@@ -2,7 +2,6 @@ from flask import Flask, redirect, render_template
 from requests import request
 from api import ask
 
-
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
