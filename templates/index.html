@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/main.css">
-    <title>Home</title>
-</head>
-<body class="w-full m-0 p-0">
-    <div class="w-full flex justify-center items-center">
-        <div class="w-full">
-            <h1 class="text-3xl"> Veja seu personagem de RPG baseado num objeto qualquer! </h1>
-            <h2 class="text-3xl"> Clique no botao abaixo </h2>
-        </div>
-        <div class="w-full">
-            <a href="/setup" class="px-12 py-4 bg-teal-300 text-xl">COMECAR!</a>
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+     <div class="w-full h-screen flex justify-center items-center">
+        <div class="text-white flex flex-col justify-center items-center m-4 md:m-10">
+            <h1 class="md:text-4xl text-xl font-bold"> CRIE SEU PERSONAGEM DE RPG BASEADO NUM OBJETO! </h1> <br>
+            <p class="md:text-2xl text-md"> Experimente a ferramente feita em Python integrada com o Chat GPT para construção do personagem! </p>
+            
+            <a href="/setup" class="mt-6 px-12 py-4 bg-gradient-to-b rounded-md from-orange-500 to-orange-700 font-bold md:text-4xl text-2xl">COMEÇAR</a>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
