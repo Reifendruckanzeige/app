@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character</title>
-</head>
-<body class="w-full p-0 m-0">
-    <div class="flex flex-col w-full justify-center items-center content-center">
-        <p>{{ message }}</p>
-        <!-- <h1>Personagem: {{ rpgContent['character'] }} </h1>
-        <p>Atributos: {{ rpgContent['attrs'] }} </p>
-        <p>Background: {{ rpgContent['background'] }} </p> -->
+{% extends 'base.html' %}
+
+{% block title %} Personagem! {% endblock %}
+
+{% block content %}
+<div class="w-full h-screen flex justify-center items-center">
+    <div class="text-white flex flex-col justify-center items-center m-4 md:m-10">
+        <div class="flex flex-col justify-center items-center w-full">
+            <h1 class="text-2xl md:text-4xl text-white font-bold">PERSONAGEM PRONTO!</h1>
+            <h2 class="font-medium md:text-xl text-white ml-2 md:ml-0">Veja o seu personagem baseado num <strong><u>{{ objectName }}</u></strong> abaixo:</h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:justify-between w-full text-left mt-6 ml-8">
+            <div>
+                <h3 class="font-bold md:text-xl">Nome:</h3> {{ message['character']['name'] }}<br>
+                <h3 class="mt-2 font-bold md:text-xl">Classe:</h3> {{ message['character']['class'] }}<br>
+                <h3 class="mt-2 font-bold md:text-xl">Região:</h3> {{ message['character']['region'] }}<br>
+            </div>
+            
+            <div class="mt-8 md:mt-0">
+                <ul>
+                    <li class="font-medium md:text-xl">Pontos de Vida: {{ message['attrs']['hp'] }}</li>
+                    <li class="font-medium md:text-xl">Força: {{ message['attrs']['str'] }}</li>
+                    <li class="font-medium md:text-xl">Destreza: {{ message['attrs']['dex'] }}</li>
+                    <li class="font-medium md:text-xl">Carisma: {{ message['attrs']['car'] }}</li>
+                    <li class="font-medium md:text-xl">Percepção: {{ message['attrs']['per'] }}</li>
+                    <li class="font-medium md:text-xl">Inteligência: {{ message['attrs']['wis'] }}</li>
+                    <li class="font-medium md:text-xl">Constituição: {{ message['attrs']['con'] }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flex flex-row justify-start mt-12 w-full">
+            <p class="font-medium break-all w-full mx-3">
+                {{ message['background'] }}
+            </p>
+        </div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

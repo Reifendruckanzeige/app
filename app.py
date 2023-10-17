@@ -21,11 +21,10 @@ def send():
             # rpgContent = acessGPT(objectName)
             # return render_template("character.html", rpgContent=rpgContent)
             message = acessGPT(objectName)
-            return render_template("character.html", message=message)
+            return render_template("character.html", message=message, objectName=objectName)
         
         errors = {
             "message": "Houve erro ao ler o nome do objeto escrito"
         }
 
         return render_template("setup.html", errors=errors)
-
