@@ -18,8 +18,10 @@ def send():
         objectName = request.form.get("objectName")
         
         if(objectName):
-            rpgContent = acessGPT(objectName)
-            return render_template("character.html", rpgContent=rpgContent)
+            # rpgContent = acessGPT(objectName)
+            # return render_template("character.html", rpgContent=rpgContent)
+            message = acessGPT(objectName)
+            return render_template("character.html", message=message)
         
         errors = {
             "message": "Houve erro ao ler o nome do objeto escrito"

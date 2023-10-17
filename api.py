@@ -16,19 +16,20 @@ link = "https://api.openai.com/v1/chat/completions"
 model_id = "gpt-3.5-turbo"
 
 def acessGPT(objectName):
-    rpgContent = {
-        'character': f"Personagem {objectName}",
-        'attrs': 'Atributos',
-        'background': 'Historia generica de background'
-    }
-    # message_body = {
-    #     "model": model_id,
-    #     "messages": [{"role": "user", "content": buildMessage(objectName)}] 
+    # rpgContent = {
+    #     'character': f"Personagem {objectName}",
+    #     'attrs': 'Atributos',
+    #     'background': 'Historia generica de background'
     # }
-    # message_body = json.dumps(message_body)
+    message_body = {
+        "model": model_id,
+        "messages": [{"role": "user", "content": buildMessage(objectName)}] 
+    }
+    message_body = json.dumps(message_body)
 
-    # request = req.post(link, headers=headers, data=message_body)
-    # ans = request.json()
+    request = req.post(link, headers=headers, data=message_body)
+    ans = request.json()
 
-    # message = ans["choices"][0]["message"]["content"]
-    return rpgContent
+    message = ans["choices"][0]["message"]["content"]
+    # return rpgContent
+    return message
