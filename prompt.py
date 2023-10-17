@@ -1,6 +1,3 @@
-# a mensagem para o prompt dá certo, agora é necessário integrar com o "content" na api
-# precisamos pensar em como receberemos esse input do aplicativo.
-
 def buildMessage(objectName):
     regions = {
         "Tecnotronia": (

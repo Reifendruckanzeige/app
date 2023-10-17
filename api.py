@@ -1,7 +1,3 @@
-# dei uma pesquisada e a base da api fica +/- assim.
-# precisamos criar uma conta nova para poder usar o free tier da open ai (o meu free tier expirou)
-# ainda precisamos detalhar a api da maneira que precisamos para o projeto
-
 from dotenv import load_dotenv
 from prompt import buildMessage
 load_dotenv()
