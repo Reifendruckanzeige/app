@@ -1,6 +1,5 @@
-from flask import Flask, redirect, render_template
-from requests import request
-from api import ask
+from flask import Flask, redirect, render_template, request
+from api import acessGPT
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -11,16 +10,20 @@ def index():
 
 @app.route("/setup", methods = ["GET"])
 def setup():
-    return render_template("setup.html")
+    return render_template("setup.html", errors={"message":""})
 
 @app.route("/send", methods = ["POST"])
 def send():
-    # Talvez aqui eu receba a string da funcao ask e jogue
-    # para o endpoint do personagem
+    if request.method == "POST":
+        objectName = request.form.get("objectName")
+        
+        if(objectName):
+            rpgContent = acessGPT(objectName)
+            return render_template("character.html", rpgContent=rpgContent)
+        
+        errors = {
+            "message": "Houve erro ao ler o nome do objeto escrito"
+        }
 
-    message = ask()
-    return redirect("/character")
+        return render_template("setup.html", errors=errors)
 
-@app.route("/character", methods = ["GET"])
-def character():
-    return render_template("character.html")

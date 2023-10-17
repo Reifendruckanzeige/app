@@ -9,10 +9,13 @@
     <div class="w-full flex flex-col justify-center items-center">
         <div class="w-full">
             <h1 class="text-3xl"> Digite um objeto qualquer </h1>
+            {% if errors['message'] != "" %}  
+                <p>{{ errors['message'] }}</p>
+            {% endif %}  
         </div>
         <div class="w-full">
             <form action="/send" method="POST">
-                <input type="text" name="object" placeholder="Digite um objeto qualquer...">
+                <input type="text" name="objectName" id="objectName" placeholder="Digite um objeto qualquer...">
                 <button type="submit">Enviar</button>
             </form>
         </div>

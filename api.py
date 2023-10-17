@@ -3,7 +3,7 @@
 # ainda precisamos detalhar a api da maneira que precisamos para o projeto
 
 from dotenv import load_dotenv
-from prompt import BASE_MESSAGE
+from prompt import buildMessage
 load_dotenv()
 
 import os
@@ -15,18 +15,20 @@ headers = {"Authorization": f"Bearer {os.environ['OPENAI_TOKEN']}", "Content-Typ
 link = "https://api.openai.com/v1/chat/completions"
 model_id = "gpt-3.5-turbo"
 
-message_body = {
-    "model": model_id,
-    "messages": [{"role": "user", "content": BASE_MESSAGE}] 
-}
-message_body = json.dumps(message_body)
+def acessGPT(objectName):
+    rpgContent = {
+        'character': f"Personagem {objectName}",
+        'attrs': 'Atributos',
+        'background': 'Historia generica de background'
+    }
+    # message_body = {
+    #     "model": model_id,
+    #     "messages": [{"role": "user", "content": buildMessage(objectName)}] 
+    # }
+    # message_body = json.dumps(message_body)
 
-def ask():
-    request = req.post(link, headers=headers, data=message_body)
-    print(request)
+    # request = req.post(link, headers=headers, data=message_body)
+    # ans = request.json()
 
-    ans = request.json()
-    print(ans)
-
-    message = ans["choices"][0]["message"]["content"]
-    return message
+    # message = ans["choices"][0]["message"]["content"]
+    return rpgContent
