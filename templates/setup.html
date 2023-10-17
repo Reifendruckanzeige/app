@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setup</title>
-</head>
-<body class="w-full m-0 p-0">
-    <div class="w-full flex flex-col justify-center items-center">
-        <div class="w-full">
-            <h1 class="text-3xl"> Digite um objeto qualquer </h1>
-            {% if errors['message'] != "" %}  
-                <p>{{ errors['message'] }}</p>
-            {% endif %}  
-        </div>
-        <div class="w-full">
+{% extends 'base.html' %}
+
+{% block title %} Setup! {% endblock %}
+
+{% block content %}
+    <div class="w-full h-screen flex justify-center items-center">
+        <div class="text-white flex flex-col justify-center items-center m-4 md:m-10">
             <form action="/send" method="POST">
-                <input type="text" name="objectName" id="objectName" placeholder="Digite um objeto qualquer...">
-                <button type="submit">Enviar</button>
+                <label for="objectName" class="text-xl md:text-4xl lg:text-5xl font-bold">Digite um objeto qualquer:</label>
+                <input type="text" name="objectName" id="objectName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                
+                {% if errors['message'] != "" %}
+                    <p class="text-red-600 font-bold my-2">{{ errors['message'] }}</p>
+                {% endif %}
+
+                <button class="bg-gradient-to-b rounded-md from-orange-500 to-orange-700 mt-2 w-full py-2 text-xl font-bold md:text-2xl lg:text-3xl lg:py-4" type="submit">Enviar</button>
             </form>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
