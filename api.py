@@ -11,7 +11,7 @@ headers = {"Authorization": f"Bearer {os.environ['OPENAI_TOKEN']}", "Content-Typ
 link = "https://api.openai.com/v1/chat/completions"
 model_id = "gpt-3.5-turbo"
 
-def acessGPT(objectName):
+def acessGPT(objectName, charLevel):
     message = {
         "character": {
             "name": "Carlos, o Valente",
@@ -31,7 +31,7 @@ def acessGPT(objectName):
     }
     # message_body = {
     #     "model": model_id,
-    #     "messages": [{"role": "user", "content": buildMessage(objectName)}] 
+    #     "messages": [{"role": "user", "content": buildMessage(objectName, charLevel)}] 
     # }
     # message_body = json.dumps(message_body)
 

@@ -13,6 +13,7 @@
         <div class="flex flex-col md:flex-row md:justify-between w-full text-left mt-6 ml-8">
             <div>
                 <h3 class="font-bold md:text-xl">Nome:</h3> {{ message['character']['name'] }}<br>
+                <h3 class="mt-2 font-bold md:text-xl">Nível:</h3> {{ charLevel }}<br>
                 <h3 class="mt-2 font-bold md:text-xl">Classe:</h3> {{ message['character']['class'] }}<br>
                 <h3 class="mt-2 font-bold md:text-xl">Região:</h3> {{ message['character']['region'] }}<br>
             </div>
@@ -22,10 +23,9 @@
                     <li class="font-medium md:text-xl">Pontos de Vida: {{ message['attrs']['hp'] }}</li>
                     <li class="font-medium md:text-xl">Força: {{ message['attrs']['str'] }}</li>
                     <li class="font-medium md:text-xl">Destreza: {{ message['attrs']['dex'] }}</li>
+                    <li class="font-medium md:text-xl">Inteligência: {{ message['attrs']['wis'] }}</li>
                     <li class="font-medium md:text-xl">Carisma: {{ message['attrs']['car'] }}</li>
                     <li class="font-medium md:text-xl">Percepção: {{ message['attrs']['per'] }}</li>
-                    <li class="font-medium md:text-xl">Inteligência: {{ message['attrs']['wis'] }}</li>
-                    <li class="font-medium md:text-xl">Constituição: {{ message['attrs']['con'] }}</li>
                 </ul>
             </div>
         </div>

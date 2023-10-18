@@ -16,15 +16,14 @@ def setup():
 def send():
     if request.method == "POST":
         objectName = request.form.get("objectName")
+        charLevel = request.form.get("charLevel")
         
-        if(objectName):
-            # rpgContent = acessGPT(objectName)
-            # return render_template("character.html", rpgContent=rpgContent)
-            message = acessGPT(objectName)
-            return render_template("character.html", message=message, objectName=objectName)
+        if(objectName and charLevel):
+            message = acessGPT(objectName, charLevel)
+            return render_template("character.html", message=message, objectName=objectName, charLevel=charLevel)
         
         errors = {
-            "message": "Houve erro ao ler o nome do objeto escrito"
+            "message": "Houve erro ao ler o campos do formulário!"
         }
 
         return render_template("setup.html", errors=errors)

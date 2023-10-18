@@ -1,4 +1,6 @@
-def buildMessage(objectName):
+from charLimits import getAttrsLimits, getHpLimits
+
+def buildMessage(objectName, charLevel):
     regions = {
         "Tecnotronia": (
             "Tecnotronia é uma metrópole avançada habitada por objetos que personificam a inovação tecnológica. A cidade é uma maravilha de engenharia,"
@@ -36,20 +38,24 @@ def buildMessage(objectName):
         )
     }
 
-    attributes = "Força, Destreza, Percepção, Pontos de vida, Classe(Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"
+    attributes = "Força, Destreza, Inteligência, Carisma, Percepção, Pontos de vida, Classe(Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"
 
     model = f"Ficha de RPG baseado num {objectName}"\
+        "Nome: (nome inventado para o personagem)"\
         "Força: (valor de força)"\
         "Destreza: (valor de destreza)"\
+        "Inteligência: (valor de inteligência)"\
+        "Carisma: (valor de carisma)"\
         "Percepção: (valor de percepção)"\
         "Pontos de vida: (valor de pontos de vida)"\
         "Classe: (Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"\
         "Região: (Tecnotronia/Verdeselva/Utilitron/Automorphia/Artalúdico)"\
+        "História: (a história do personagem)"\
 
     message = f"Estou criando uma ficha de personagem de RPG baseado num  {objectName}."\
-        f"Eu preciso que você crie um nome relacionado e valores de 0-10 dos atributos (os pontos de vida vão de 0-100): {attributes}."\
+        f"Eu preciso que você crie um nome relacionado e valores de {getAttrsLimits(charLevel)} dos atributos (os pontos de vida vão de {getHpLimits(charLevel)}): {attributes}."\
         f"Esse personagem precisa se encaixar em uma das regiões com a qual ele mais se relaciona: {regions}"\
         f"Além disso, coloque um, apenas um, breve parágrafo que invente uma história para esse personagem." \
-        f"Ao final me retorne no seguinte modelo: {model}"
+        f"Ao final me retorne no seguinte modelo (não coloque em lista, apenas texto corrido): {model}"
     
     return message
