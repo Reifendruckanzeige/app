@@ -22,7 +22,6 @@ def accessGPT(objectName, charLevel):
     # ans = request.json()
 
     # data = ans["choices"][0]["message"]["content"]
-    
     # REMOVER ESSE EXEMPLO
     data = "NAME: Cedric, o Sólido/CLASS: Guerreiro/HP: 28/STR: 8/DEX: 5/CAR: 6/PER: 6/WIS: 5/BKG: Cedric, o Sólido, nasceu em uma pequena vila às margens de uma floresta encantada. Desde jovem, ele demonstrava uma força incomum, capaz de erguer objetos pesados com facilidade. Sua devoção à vila o levou a treinar incansavelmente nas artes da guerra, tornando-se um guerreiro habilidoso e respeitado. Apesar de sua imponente presença, Cedric é conhecido por sua gentileza e capacidade de liderança. Ele é um defensor dedicado de seu povo, e sua determinação em proteger sua terra natal é inabalável. Em uma jornada para desvendar os mistérios da floresta encantada, Cedric busca fortalecer ainda mais suas habilidades e encontrar aliados que compartilhem de sua causa."
     messageFormatted = data.split("/")

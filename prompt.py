@@ -47,4 +47,5 @@ def buildMessage(objectName, charLevel):
         f"Depois, crie uma história para tal e coloque em APENAS UM parágrafo." \
         f"Selecione uma das classes: Guerreiro/Mago/Ladrão/Paladino/Arqueiro." \
         f"O resultado deve seguir o seguinte modelo: {model}"
+    
     return message
