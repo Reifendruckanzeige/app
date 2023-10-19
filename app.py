@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request
-from api import acessGPT
+from api import accessGPT
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -19,7 +19,7 @@ def send():
         charLevel = request.form.get("charLevel")
         
         if(objectName and charLevel):
-            message = acessGPT(objectName, charLevel)
+            message = accessGPT(objectName, charLevel)
             return render_template("character.html", message=message, objectName=objectName, charLevel=charLevel)
         
         errors = {

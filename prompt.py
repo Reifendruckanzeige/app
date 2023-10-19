@@ -40,22 +40,11 @@ def buildMessage(objectName, charLevel):
 
     attributes = "Força, Destreza, Inteligência, Carisma, Percepção, Pontos de vida, Classe(Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"
 
-    model = f"Ficha de RPG baseado num {objectName}"\
-        "Nome: (nome inventado para o personagem)"\
-        "Força: (valor de força)"\
-        "Destreza: (valor de destreza)"\
-        "Inteligência: (valor de inteligência)"\
-        "Carisma: (valor de carisma)"\
-        "Percepção: (valor de percepção)"\
-        "Pontos de vida: (valor de pontos de vida)"\
-        "Classe: (Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"\
-        "Região: (Tecnotronia/Verdeselva/Utilitron/Automorphia/Artalúdico)"\
-        "História: (a história do personagem)"\
+    model = f"NAME:(nome inventado para o personagem), CLASS:(classe), HP:(pontos de vida), STR:(valor de força), DEX:(valor de destreza), CAR:(valor de carisma), PER:(valor de percepção), WIS:(valor de inteligência), BKG:(história do personagem)"\
 
-    message = f"Estou criando uma ficha de personagem de RPG baseado num  {objectName}."\
-        f"Eu preciso que você crie um nome relacionado e valores de {getAttrsLimits(charLevel)} dos atributos (os pontos de vida vão de {getHpLimits(charLevel)}): {attributes}."\
-        f"Esse personagem precisa se encaixar em uma das regiões com a qual ele mais se relaciona: {regions}"\
-        f"Além disso, coloque um, apenas um, breve parágrafo que invente uma história para esse personagem." \
-        f"Ao final me retorne no seguinte modelo (não coloque em lista, apenas texto corrido): {model}"
-    
+    message = f"Crie uma ficha de personagem de RPG baseado num(a) {objectName}."\
+        f"Crie um nome relacionado e valores de {getAttrsLimits(charLevel)} dos atributos (os pontos de vida vão de {getHpLimits(charLevel)}): {attributes}."\
+        f"Depois, crie uma história para tal e coloque em APENAS UM parágrafo." \
+        f"Selecione uma das classes: Guerreiro/Mago/Ladrão/Paladino/Arqueiro." \
+        f"O resultado deve seguir o seguinte modelo: {model}"
     return message
