@@ -14,14 +14,14 @@ def getAttrsLimits(level):
     
 def getHpLimits(level):
     if level == "1":
-        result = "10 até 20"
+        return "10 até 20"
     elif level == "2":
-        result = "21 até 30"
+        return "21 até 30"
     elif level == "3":
-        result = "31 até 40"
+        return "31 até 40"
     elif level == "4":
-        result = "41 até 50"
+        return "41 até 50"
     elif level == "5":
-        result = "51 até 60"
+        return "51 até 60"
     else:
-        result = "10 - 60"
+        return "10 - 60"
