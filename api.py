@@ -12,19 +12,19 @@ link = "https://api.openai.com/v1/chat/completions"
 model_id = "gpt-3.5-turbo"
 
 def generateImage(text):
-    endpoint = "https://api.openai.com/v1/images/generations"
-    resolution = "256x256"
+    # endpoint = "https://api.openai.com/v1/images/generations"
+    # resolution = "256x256"
 
-    message_body = {
-        "prompt": text,
-        "size": resolution,
-    }
-    message_body = json.dumps(message_body)
+    # message_body = {
+    #     "prompt": text,
+    #     "size": resolution,
+    # }
+    # message_body = json.dumps(message_body)
 
     # request = req.post(endpoint, headers=headers, data=message_body)
     # ans = request.json()
 
-    # return ans["data"][0]["url"]
+    # return ans["data"][0]["url" ]
 
     # REMOVER ESSE EXEMPLO
     return "https://oaidalleapiprodscus.blob.core.windows.net/private/org-gRhYSBVepOCJW4eWQhzEHSE7/user-NYnrVKKYj5ZRM6fDxPIhjJ5o/img-rnm6CArab48mkuAnKs8u9m2a.png?st=2023-10-19T03%3A29%3A38Z&se=2023-10-19T05%3A29%3A38Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-10-18T19%3A43%3A33Z&ske=2023-10-19T19%3A43%3A33Z&sks=b&skv=2021-08-06&sig=AMcSm%2B52rq0Dy94bMcvi2cmw2Btihx/po9c%2BKkY6ebM%3D"
@@ -45,8 +45,8 @@ def accessGPT(objectName, charLevel):
     
     messageFormatted = data.split("/")
 
-    imageUrl = generateImage(data)
-    
+    background = messageFormatted[8].split("BKG: ")[1]
+
     return {
         "name": messageFormatted[0].split("NAME: ")[1],
         "class": messageFormatted[1].split("CLASS: ")[1],
@@ -58,6 +58,6 @@ def accessGPT(objectName, charLevel):
             "per": messageFormatted[6].split("PER: ")[1],
             "wis": messageFormatted[7].split("WIS: ")[1],
         },
-        "background": messageFormatted[8].split("BKG: ")[1],
-        "imageUrl": imageUrl
+        "background": background,
+        "imageUrl": generateImage(background)
     }
