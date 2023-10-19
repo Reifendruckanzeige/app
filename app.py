@@ -19,8 +19,8 @@ def send():
         charLevel = request.form.get("charLevel")
         
         if(objectName and charLevel):
-            message = accessGPT(objectName, charLevel)
-            return render_template("character.html", message=message, objectName=objectName, charLevel=charLevel)
+            character = accessGPT(objectName, charLevel)
+            return render_template("character.html", character=character, objectName=objectName, charLevel=charLevel)
         
         errors = {
             "message": "Houve erro ao ler o campos do formulário!"

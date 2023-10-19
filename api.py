@@ -24,15 +24,13 @@ def accessGPT(objectName, charLevel):
     # data = ans["choices"][0]["message"]["content"]
     
     # REMOVER ESSE EXEMPLO
-    data = "NAME: Theron, CLASS: Arqueiro, HP: 15, STR: 1, DEX: 4, CAR: 2, PER: 3, WIS: 0, BKG: Theron, um hábil arqueiro, nasceu nas vastas florestas de Eldorin, onde aprendeu a arte da caça e a habilidade de se mover silenciosamente entre as árvores. Sua força física pode não ser impressionante, mas sua destreza e agilidade são incomparáveis. Com um olhar perspicaz, ele percebe os detalhes mais sutis na natureza ao seu redor, tornando-se um rastreador exímio. Embora não seja o mais carismático, sua presença tranquila e serena é reconfortante para aqueles ao seu redor. Theron nunca foi inclinado para os caminhos da magia, preferindo confiar em sua habilidade com o arco e flecha. Sua vida é dedicada a proteger as florestas e as criaturas que nelas habitam, tornando-se um guardião incansável da natureza."
-    messageFormatted = data.split(",")
+    data = "NAME: Cedric, o Sólido/CLASS: Guerreiro/HP: 28/STR: 8/DEX: 5/CAR: 6/PER: 6/WIS: 5/BKG: Cedric, o Sólido, nasceu em uma pequena vila às margens de uma floresta encantada. Desde jovem, ele demonstrava uma força incomum, capaz de erguer objetos pesados com facilidade. Sua devoção à vila o levou a treinar incansavelmente nas artes da guerra, tornando-se um guerreiro habilidoso e respeitado. Apesar de sua imponente presença, Cedric é conhecido por sua gentileza e capacidade de liderança. Ele é um defensor dedicado de seu povo, e sua determinação em proteger sua terra natal é inabalável. Em uma jornada para desvendar os mistérios da floresta encantada, Cedric busca fortalecer ainda mais suas habilidades e encontrar aliados que compartilhem de sua causa."
+    messageFormatted = data.split("/")
     
     return {
-        "character": {
-            "name": messageFormatted[0].split("NAME: ")[1],
-            "class": messageFormatted[1].split("CLASS: ")[1],
-        },
-        "attrs": {
+        "name": messageFormatted[0].split("NAME: ")[1],
+        "class": messageFormatted[1].split("CLASS: ")[1],
+        "attributes": {
             "hp": messageFormatted[2].split("HP: ")[1], 
             "str": messageFormatted[3].split("STR: ")[1],
             "dex": messageFormatted[4].split("DEX: ")[1],
