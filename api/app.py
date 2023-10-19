@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request
-from api.api import accessGPT
+from api import accessGPT
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
