@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request
-from api import acessGPT
+from api.api import acessGPT
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -28,3 +28,4 @@ def send():
         }
 
         return render_template("setup.html", errors=errors)
+    return redirect("/")

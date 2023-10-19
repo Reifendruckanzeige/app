@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from prompt import buildMessage
+from api.prompt import buildMessage
 load_dotenv()
 
 import os
