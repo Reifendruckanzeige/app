@@ -1,4 +1,4 @@
-from charLimits import getAttrsLimits, getHpLimits
+from api.charLimits import getAttrsLimits, getHpLimits
 
 def buildMessage(objectName, charLevel):
     # regions = {
