@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request
-from api import acessGPT
+from api import accessGPT
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -16,15 +16,14 @@ def setup():
 def send():
     if request.method == "POST":
         objectName = request.form.get("objectName")
+        charLevel = request.form.get("charLevel")
         
-        if(objectName):
-            # rpgContent = acessGPT(objectName)
-            # return render_template("character.html", rpgContent=rpgContent)
-            message = acessGPT(objectName)
-            return render_template("character.html", message=message, objectName=objectName)
+        if(objectName and charLevel):
+            character = accessGPT(objectName, charLevel)
+            return render_template("character.html", character=character, objectName=objectName, charLevel=charLevel)
         
         errors = {
-            "message": "Houve erro ao ler o nome do objeto escrito"
+            "message": "Houve erro ao ler o campos do formulário!"
         }
 
         return render_template("setup.html", errors=errors)
