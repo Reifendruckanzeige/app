@@ -3,24 +3,19 @@
 {% block title %} Personagem! {% endblock %}
 
 {% block content %}
-<div class="w-full flex flex-col h-full justify-center items-center">
-    <div class="text-white flex flex-col justify-center items-center m-4 md:m-10">
-        <div class="flex flex-col justify-center items-center w-full">
-            <h1 class="text-2xl md:text-4xl text-white font-bold">PERSONAGEM PRONTO!</h1>
-            <h2 class="font-medium md:text-xl text-white ml-2 md:ml-0">Veja o seu personagem baseado num <strong><u>{{ objectName }}</u></strong> abaixo:</h2>
-        </div>
-
-        <img src="{{ character['imageUrl'] }}" alt="Character Image" class="mt-4 md:mt-8 lg:mt-4 border-r-2" width="256" height="256">
-
-        <div class="container flex lg:flex-row flex-col md:justify-center justify-around md:mt-8 md:ml-20 lg:ml-0 lg:mx-4">
-            <div class="md:grid md:grid-cols-12 md:gap-4 md:mt-0 mt-4">
-                <div class="col-span-6">
+<div class="w-full h-screen flex flex-col justify-center items-center pt-24 md:pt-0 xl:px-10 lg:pt-24 p-2">
+    <div class="border-sky-600 border-2 rounded-md w-full">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-4 mt-1 ml-1">
+                <img src="{{ character['imageUrl'] }}" alt="Imagem do personagem" class=" border-2 border-sky-600 rounded-md p-1 lg:p-2 lg:w-256px lg:h-256px w-128px h-128px">
+            </div>
+            <div class="col-span-8 border-2 border-sky-600 rounded-md mt-1 mr-1 text-white">
+                <div class="p-1 lg:p-2">
                     <span class="font-bold underline md:text-xl xl:text-2xl">CARACTERÍSTICAS</span><br>
                     <span class="text-sm font-bold xl:text-xl">Nome:</span> {{ character['name'] }}<br>
                     <span class="text-sm mt-2 font-bold xl:text-xl">Nível:</span> {{ charLevel }}<br>
-                    <span class="text-sm mt-2 font-bold xl:text-xl">Classe:</span> {{ character['class'] }}<br>
-                </div>
-                <div class="col-span-6">
+                    <span class="text-sm mt-2 font-bold xl:text-xl">Classe:</span> {{ character['class'] }}<br><br>
+                    
                     <span class="font-bold underline md:text-xl xl:text-2xl">ATRIBUTOS</span>
                     <ul>
                         <li class="text-sm xl:text-xl">Pontos de Vida: {{ character['attributes']['hp'] }}</li>
@@ -32,9 +27,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="md:w-2/3 md:mt-0 mt-4">
-                <span class="font-bold underline md:text-2xl xl:text-2xl">HISTÓRIA ANTECEDENTE</span><br>
-                <span class="text-sm xl:text-xl">{{ character['background'] }}</span>
+            <div class="col-span-12 border-2 border-sky-600 rounded-md mb-1 mx-1 text-white">
+                <div class="p-1 lg:p-2">
+                    <span class="font-bold underline md:text-2xl xl:text-2xl">HISTÓRIA ANTECEDENTE</span><br>
+                    <span class="text-sm xl:text-xl">{{ character['background'] }}</span>
+                </div>
             </div>
         </div>
     </div>

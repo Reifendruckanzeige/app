@@ -3,26 +3,36 @@
 {% block title %} Setup! {% endblock %}
 
 {% block content %}
-    <div class="w-full h-screen flex justify-center items-center">
-        <div class="text-white flex flex-col justify-center items-center m-4 md:m-10">
+    <div class="w-full h-screen flex flex-col justify-center items-center">
+        <div class="text-white flex flex-col lg:w-2/4 m-4 md:m-10">
             <form action="/send" method="POST">
-                <label for="objectName" class="text-xl md:text-4xl lg:text-5xl font-bold">Digite um objeto qualquer:</label>
-                <input type="text" name="objectName" id="objectName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                
-                <label for="objectName" class="text-xl md:text-4xl lg:text-5xl font-bold">Selecione o nível do personagem:</label>
-                <select name="charLevel" id="charLevel" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1" default> Nível 1 </option>
-                    <option value="2"> Nível 2 </option>
-                    <option value="3"> Nível 3 </option>
-                    <option value="4"> Nível 4 </option>
-                    <option value="5"> Nível 5 </option>
-                </select>
-                
-                {% if errors['message'] != "" %}
-                    <p class="text-red-600 font-bold my-2">{{ errors['message'] }}</p>
-                {% endif %}
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-12 lg:col-span-6">
+                        <label for="objectName" class="md:text-4xl lg:text-2xl font-bold">Digite um objeto qualquer:</label>
+                        <input type="text" name="objectName" id="objectName" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    </div>
+                    
+                    <div class="col-span-12 lg:col-span-6">
+                        <label for="objectName" class="md:text-4xl lg:text-2xl font-bold">Selecione o nível do personagem:</label>
+                        <select name="charLevel" id="charLevel" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5">
+                            <option value="1" default> Nível 1 </option>
+                            <option value="2"> Nível 2 </option>
+                            <option value="3"> Nível 3 </option>
+                            <option value="4"> Nível 4 </option>
+                            <option value="5"> Nível 5 </option>
+                        </select>
+                    </div>
 
-                <button class="bg-gradient-to-b rounded-md from-orange-500 to-orange-700 mt-2 w-full py-2 text-xl font-bold md:text-2xl lg:text-3xl lg:py-4" type="submit">Enviar</button>
+                    <div class="col-span-12">
+                        {% if errors['message'] != "" %}
+                            <p class="bg-red-600 underline text-sm font-bold my-2">{{ errors['message'] }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="col-span-12">
+                        <button class="button-default mt-2 w-full py-2 text-xl font-bold md:text-2xl lg:text-3xl lg:py-4" type="submit">Enviar</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

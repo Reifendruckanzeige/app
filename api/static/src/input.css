@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.button-default {
+    @apply font-bold bg-gradient-to-br from-sky-600 from-5% to-sky-900 rounded-lg hover:bg-gradient-to-br hover:from-sky-600 hover:from-25% hover:to-sky-900;
+}

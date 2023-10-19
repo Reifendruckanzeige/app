@@ -6,9 +6,15 @@
     <link rel="stylesheet" href="/static/css/main.css">
     <title>{% block title %} {% endblock %}</title>
 </head>
-<body class="w-screen h-screen m-0 p-0 bg-gradient-to-br from-blue-600 to-blue-900">
-    {% block content %}
-
-    {% endblock %}
+<body class="w-screen h-screen m-0 p-0 lg:bg-gradient-to-br bg-gradient-to-b from-ras-color lg:from-25% md:from-35% from-35% to-rose-950">
+    <div class="fixed">
+        <a href="/"><img class="md:ml-4 mt-2 rounded-lg shadow-sm w-120px lg:w-300px" src="/static/public/images/ras-logo.png" alt="Logo RAS UNESP Bauru"></a>
+    </div>
+    
+    <div class="w-full h-screen">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
 </body>
 </html>
