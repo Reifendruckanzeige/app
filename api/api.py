@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from prompt import buildMessage
+from api.prompt import buildMessage
 load_dotenv()
 
 import os
@@ -37,7 +37,7 @@ def accessGPT(objectName, charLevel):
     ans = request.json()
 
     data = ans["choices"][0]["message"]["content"]
-    
+
     messageFormatted = data.split("/")
 
     background = messageFormatted[8].split("BKG: ")[1]
