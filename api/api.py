@@ -40,18 +40,22 @@ def accessGPT(objectName, charLevel):
 
     messageFormatted = data.split("/")
 
-    background = messageFormatted[8].split("BKG: ")[1]
+    background = messageFormatted[12].split(": ")[1]
 
     return {
-        "name": messageFormatted[0].split("NAME: ")[1],
-        "class": messageFormatted[1].split("CLASS: ")[1],
+        "name": messageFormatted[0].split(": ")[1],
+        "alignment": messageFormatted[1].split(": ")[1],
+        "class": messageFormatted[2].split(": ")[1],
+        "race": messageFormatted[3].split(": ")[1],
+        "skill": messageFormatted[4].split(": ")[1],
+        "weapon": messageFormatted[11].split(": ")[1],
         "attributes": {
-            "hp": messageFormatted[2].split("HP: ")[1], 
-            "str": messageFormatted[3].split("STR: ")[1],
-            "dex": messageFormatted[4].split("DEX: ")[1],
-            "car": messageFormatted[5].split("CAR: ")[1],
-            "per": messageFormatted[6].split("PER: ")[1],
-            "wis": messageFormatted[7].split("WIS: ")[1],
+            "hp": messageFormatted[5].split(": ")[1], 
+            "str": messageFormatted[6].split(": ")[1],
+            "dex": messageFormatted[7].split(": ")[1],
+            "car": messageFormatted[8].split(": ")[1],
+            "per": messageFormatted[9].split(": ")[1],
+            "wis": messageFormatted[10].split(": ")[1],
         },
         "background": background,
         "imageUrl": generateImage(background)

@@ -3,7 +3,7 @@
 {% block title %} Personagem! {% endblock %}
 
 {% block content %}
-<div class="w-full h-screen flex flex-col justify-center items-center pt-24 md:pt-0 xl:px-10 lg:pt-24 p-2">
+<div class="w-full h-screen flex flex-col justify-center items-center pt-24 md:pt-0 xl:px-10 lg:pt-32 p-2">
     <div class="border-sky-600 border-2 rounded-md w-full">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-span-4 mt-1 ml-1">
@@ -13,8 +13,12 @@
                 <div class="p-1 lg:p-2">
                     <span class="font-bold underline md:text-xl xl:text-2xl">CARACTERÍSTICAS</span><br>
                     <span class="text-sm font-bold xl:text-xl">Nome:</span> {{ character['name'] }}<br>
+                    <span class="text-sm font-bold xl:text-xl">Alinhamento:</span> {{ character['alignment'] }}<br>
+                    <span class="text-sm mt-2 font-bold xl:text-xl">Classe:</span> {{ character['class'] }}<br>
+                    <span class="text-sm mt-2 font-bold xl:text-xl">Raça:</span> {{ character['race'] }}<br>
                     <span class="text-sm mt-2 font-bold xl:text-xl">Nível:</span> {{ charLevel }}<br>
-                    <span class="text-sm mt-2 font-bold xl:text-xl">Classe:</span> {{ character['class'] }}<br><br>
+                    <span class="text-sm mt-2 font-bold xl:text-xl">Proficiência em:</span> {{ character['skill'] }}<br>
+                    <span class="text-sm mt-2 font-bold xl:text-xl">Arma inicial:</span> {{ character['weapon'] }}<br><br>
                     
                     <span class="font-bold underline md:text-xl xl:text-2xl">ATRIBUTOS</span>
                     <ul>
