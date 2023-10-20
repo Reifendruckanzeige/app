@@ -2,12 +2,12 @@ from charLimits import getAttrsLimits, getHpLimits
 
 def buildMessage(objectName, charLevel):
 
-    attributes = "Força, Destreza, Inteligência, Carisma, Percepção, Pontos de vida, Classe(Guerreiro/Mago/Ladrão/Paladino/Arqueiro)"
+    attributes = "Força, Destreza, Carisma, Percepção, Inteligência e Pontos de Vida"
 
     model = f"NAME:(nome inventado para o personagem)/ALG: (personalidade)/CLASS:(classe)/RACE:(raça)/PRO: (proficiência)/HP:(pontos de vida)/STR:(valor de força)/DEX:(valor de destreza)/CAR:(valor de carisma)/PER:(valor de percepção)/WIS:(valor de inteligência)/WEA: (arma medieval)/BKG:(história do personagem)"\
 
     message = f"Crie uma ficha de personagem de RPG baseado num(a) {objectName}."\
-        f"Crie um nome relacionado e valores de {getAttrsLimits(charLevel)} dos atributos (os pontos de vida vão de {getHpLimits(charLevel)}): {attributes}."\
+        f"Crie um nome relacionado e valores de {getAttrsLimits(charLevel)} dos atributos: {attributes}. (os pontos de vida vão de {getHpLimits(charLevel)})"\
         f"Depois, crie uma história para tal e coloque em APENAS UM parágrafo." \
         f"Selecione uma das classes: Guerreiro/Mago/Ladrão/Paladino/Clérigo/Druída/Bárbaro/Monge/Samurai/Artífice" \
         f"Selecione uma das raças: Halfling/Elfo/Anão/Tiefling/Humano/Draconato/Gnomo/Meio-orc/Meio-elfo" \
